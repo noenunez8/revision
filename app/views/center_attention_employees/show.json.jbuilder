@@ -1,0 +1,1 @@
+json.partial! "center_attention_employees/center_attention_employee", center_attention_employee: @center_attention_employee

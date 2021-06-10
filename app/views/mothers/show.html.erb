@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @mother.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @mother.last_name %>
+</p>
+
+<p>
+  <strong>Dni number:</strong>
+  <%= @mother.dni_number %>
+</p>
+
+<p>
+  <strong>Direction:</strong>
+  <%= @mother.direction_id %>
+</p>
+
+<%= link_to 'Edit', edit_mother_path(@mother) %> |
+<%= link_to 'Back', mothers_path %>

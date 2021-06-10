@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Control type:</strong>
+  <%= @pregnancy_control.control_type %>
+</p>
+
+<p>
+  <strong>Control date:</strong>
+  <%= @pregnancy_control.control_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @pregnancy_control.description %>
+</p>
+
+<p>
+  <strong>Mother:</strong>
+  <%= @pregnancy_control.mother_id %>
+</p>
+
+<%= link_to 'Edit', edit_pregnancy_control_path(@pregnancy_control) %> |
+<%= link_to 'Back', pregnancy_controls_path %>

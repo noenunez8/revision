@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  center_attention: one
+  doctor: one
+  speciality: one
+  mother: one
+  baby: one
+
+two:
+  description: MyString
+  center_attention: two
+  doctor: two
+  speciality: two
+  mother: two
+  baby: two

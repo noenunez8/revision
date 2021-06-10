@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Center Attention Employees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Center attention</th>
+      <th>Doctor</th>
+      <th>Speciality</th>
+      <th>Mother</th>
+      <th>Baby</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @center_attention_employees.each do |center_attention_employee| %>
+      <tr>
+        <td><%= center_attention_employee.description %></td>
+        <td><%= center_attention_employee.center_attention.name %></td>
+        <td><%= center_attention_employee.doctor.full_name %></td>
+        <td><%= center_attention_employee.speciality.name %></td>
+        <td><%= center_attention_employee.mother.full_name %></td>
+        <td><%= center_attention_employee.baby.full_name %></td>
+        <td><%= link_to 'Show', center_attention_employee %></td>
+        <td><%= link_to 'Edit', edit_center_attention_employee_path(center_attention_employee) %></td>
+        <td><%= link_to 'Destroy', center_attention_employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @center_attention_employees %>
+<br>
+
+<%= link_to 'New Center Attention Employee', new_center_attention_employee_path %>

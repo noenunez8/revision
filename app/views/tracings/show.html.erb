@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date of visit:</strong>
+  <%= @tracing.date_of_visit %>
+</p>
+
+<p>
+  <strong>Mother is health:</strong>
+  <%= @tracing.mother_is_health %>
+</p>
+
+<p>
+  <strong>Son is health:</strong>
+  <%= @tracing.son_is_health %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tracing.description %>
+</p>
+
+<p>
+  <strong>Mother:</strong>
+  <%= @tracing.mother_id %>
+</p>
+
+<p>
+  <strong>Baby:</strong>
+  <%= @tracing.baby_id %>
+</p>
+
+<%= link_to 'Edit', edit_tracing_path(@tracing) %> |
+<%= link_to 'Back', tracings_path %>

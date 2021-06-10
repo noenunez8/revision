@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mothers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Dni number</th>
+      <th>Direction</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mothers.each do |mother| %>
+      <tr>
+        <td><%= mother.first_name %></td>
+        <td><%= mother.last_name %></td>
+        <td><%= mother.dni_number %></td>
+        <td><%= mother.direction.full_dir %></td>
+        <td><%= link_to 'Show', mother %></td>
+        <td><%= link_to 'Edit', edit_mother_path(mother) %></td>
+        <td><%= link_to 'Destroy', mother, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mother', new_mother_path %>

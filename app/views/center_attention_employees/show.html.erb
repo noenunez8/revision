@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @center_attention_employee.description %>
+</p>
+
+<p>
+  <strong>Center attention:</strong>
+  <%= @center_attention_employee.center_attention_id %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @center_attention_employee.doctor_id %>
+</p>
+
+<p>
+  <strong>Speciality:</strong>
+  <%= @center_attention_employee.speciality_id %>
+</p>
+
+<p>
+  <strong>Mother:</strong>
+  <%= @center_attention_employee.mother_id %>
+</p>
+
+<p>
+  <strong>Baby:</strong>
+  <%= @center_attention_employee.baby_id %>
+</p>
+
+<%= link_to 'Edit', edit_center_attention_employee_path(@center_attention_employee) %> |
+<%= link_to 'Back', center_attention_employees_path %>

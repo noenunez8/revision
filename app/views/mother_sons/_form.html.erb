@@ -1,0 +1,27 @@
+<%= form_with(model: mother_son) do |form| %>
+  <% if mother_son.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mother_son.errors.count, "error") %> prohibited this mother_son from being saved:</h2>
+
+      <ul>
+        <% mother_son.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :mother_id %>
+    <%=  form.collection_select(:mother_id, Mother.all, :id, :full_name)d %>
+  </div>
+
+  <div class="field">
+    <%= form.label :baby_id %>
+    <%=  form.collection_select(:baby_id, Baby.all, :id, :full_name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

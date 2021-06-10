@@ -1,0 +1,37 @@
+<%= form_with(model: pregnancy_control) do |form| %>
+  <% if pregnancy_control.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pregnancy_control.errors.count, "error") %> prohibited this pregnancy_control from being saved:</h2>
+
+      <ul>
+        <% pregnancy_control.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :control_type %>
+    <%= form.text_field :control_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :control_date %>
+    <%= form.date_select :control_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mother_id %>
+    <%= form.text_field :mother_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

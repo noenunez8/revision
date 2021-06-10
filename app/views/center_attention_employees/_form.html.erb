@@ -1,0 +1,47 @@
+<%= form_with(model: center_attention_employee) do |form| %>
+  <% if center_attention_employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(center_attention_employee.errors.count, "error") %> prohibited this center_attention_employee from being saved:</h2>
+
+      <ul>
+        <% center_attention_employee.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :center_attention_id %>
+    <%= form.collection_select(:center_attention_id, CenterAttention.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :doctor_id %>
+    <%= form.collection_select(:doctor_id, Doctor.all, :id, :full_name)%>
+  </div>
+
+  <div class="field">
+    <%= form.label :speciality_id %>
+    <%= form.collection_select(:speciality_id, Speciality.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mother_id %>
+    <%= form.collection_select(:mother_id, Mother.all, :id, :full_name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :baby_id %>
+    <%= form.collection_select(:baby_id, Baby.all, :id, :full_name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
