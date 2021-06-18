@@ -6,6 +6,7 @@ class CenterAttentionsController < ApplicationController
   def index
     @center_attentions = CenterAttention.all
     @center_attentions = @center_attentions.page(params[:page] || 1)
+    @center_attentions = @center_attentions.where(["name LIKE :filter", :filter => "%" + params[:filter] + "%"]) unless params[:filter].blank?
   end
 
   # GET /center_attentions/1 or /center_attentions/1.json

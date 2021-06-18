@@ -19,7 +19,7 @@
         <td><%= pregnancy_control.control_type %></td>
         <td><%= pregnancy_control.control_date %></td>
         <td><%= pregnancy_control.description %></td>
-        <td><%= pregnancy_control.mother_id %></td>
+        <td><%= pregnancy_control.mother.full_name %></td>
         <td><%= link_to 'Show', pregnancy_control %></td>
         <td><%= link_to 'Edit', edit_pregnancy_control_path(pregnancy_control) %></td>
         <td><%= link_to 'Destroy', pregnancy_control, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,7 +27,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= paginate @pregnancy_controls %>
 <br>
 
 <%= link_to 'New Pregnancy Control', new_pregnancy_control_path %>

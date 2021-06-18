@@ -5,6 +5,7 @@ class CenterAttentionEmployeesController < ApplicationController
   # GET /center_attention_employees or /center_attention_employees.json
   def index
     @center_attention_employees = CenterAttentionEmployee.all
+    
     @center_attention_employees = @center_attention_employees.page(params[:page] || 1)
   end
 

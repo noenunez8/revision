@@ -3,5 +3,5 @@ class MotherSon < ApplicationRecord
   belongs_to :mother
   belongs_to :baby
 
-    validates :mother, :baby, :presence => true
+  validates :mother, :baby, :presence => true
 end

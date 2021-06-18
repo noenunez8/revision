@@ -5,6 +5,7 @@ class BabiesController < ApplicationController
   # GET /babies or /babies.json
   def index
     @babies = Baby.all
+    @babies = @babies.where(["first_name LIKE :filter OR last_name LIKE :filter", :filter => "%" + params[:filter] + "%"]) unless params[:filter].blank?
     @babies = @babies.page(params[:page] || 1)
   end
 

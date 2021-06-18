@@ -3,6 +3,6 @@ class CenterAttention < ApplicationRecord
   belongs_to :direction
   has_many :center_attention_employees
 
-  validates :direction, :center_attention_employees, :name, :presence => true
+  validates :direction, :name, :presence => true
 
 end

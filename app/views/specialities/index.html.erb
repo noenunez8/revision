@@ -6,6 +6,8 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Number of doctors</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +16,7 @@
     <% @specialities.each do |speciality| %>
       <tr>
         <td><%= speciality.name %></td>
+        <td><%= link_to speciality.doctors.count, doctors_path(:speciality_id => speciality.id) %></td>
         <td><%= link_to 'Show', speciality %></td>
         <td><%= link_to 'Edit', edit_speciality_path(speciality) %></td>
         <td><%= link_to 'Destroy', speciality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -21,7 +24,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= paginate @specialities %>
 <br>
 
 <%= link_to 'New Speciality', new_speciality_path %>

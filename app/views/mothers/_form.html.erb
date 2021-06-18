@@ -28,9 +28,12 @@
 
   <div class="field">
     <%= form.label :direction_id %>
-    <%=  form.collection_select(:direction_id, Direction.all, :id, :full_dir)%>
+    <%=  form.collection_select(:direction_id, Direction.all, :id, :street)%>
   </div>
-
+  <div class="field">
+    <%= form.label :direction_id %>
+    <%=  form.collection_select(:direction_id, Direction.all, :id, :number)%>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>

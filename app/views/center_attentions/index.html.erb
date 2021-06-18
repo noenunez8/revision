@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Center Attentions</h1>
-
+<form method="GET" action="/center_attentions">
+  Nombre: <input type="text" name="filter" />
+  <input type="submit" />
+</form>
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
       <th>Direction</th>
+      <th>Number</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +19,11 @@
   <tbody>
     <% @center_attentions.each do |center_attention| %>
       <tr>
+        
         <td><%= center_attention.name %></td>
         <td><%= center_attention.description %></td>
-        <td><%= center_attention.direction.full_dir%></td>
+        <td><%= center_attention.direction.street%></td>
+        <td><%= center_attention.direction.number%></td>
         <td><%= link_to 'Show', center_attention %></td>
         <td><%= link_to 'Edit', edit_center_attention_path(center_attention) %></td>
         <td><%= link_to 'Destroy', center_attention, method: :delete, data: { confirm: 'Are you sure?' } %></td>

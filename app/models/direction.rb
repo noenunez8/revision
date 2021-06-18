@@ -5,8 +5,6 @@ class Direction < ApplicationRecord
   has_many :doctors
   has_many :mothers
 
-  validates :location, :center_attentions, :street, :number, :presence => true
-  def full_dir
-    street + " " + number
-  end
+  validates :location, :street, :number, :presence => true
+
 end

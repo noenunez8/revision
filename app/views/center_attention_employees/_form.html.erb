@@ -23,9 +23,8 @@
 
   <div class="field">
     <%= form.label :doctor_id %>
-    <%= form.collection_select(:doctor_id, Doctor.all, :id, :full_name)%>
+    <%= form.collection_select(:doctor_id, Doctor.all, :id, :full_name) %>
   </div>
-
   <div class="field">
     <%= form.label :speciality_id %>
     <%= form.collection_select(:speciality_id, Speciality.all, :id, :name) %>

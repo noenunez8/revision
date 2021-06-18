@@ -23,12 +23,16 @@
 
   <div class="field">
     <%= form.label :speciality_id %>
-    <%= form.text_field :speciality_id %>
+    <%= form.collection_select(:speciality_id, Speciality.all, :id, :name) %>
   </div>
 
   <div class="field">
     <%= form.label :direction_id %>
-    <%= form.text_field :direction_id %>
+    <%= form.collection_select(:direction_id, Direction.all, :id, :street)%>
+  </div>
+  <div class="field">
+    <%= form.label :direction_id %>
+    <%= form.collection_select(:direction_id, Direction.all, :id, :number)%>
   </div>
 
   <div class="actions">

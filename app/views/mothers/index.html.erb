@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Mothers</h1>
-
+<form method="GET" action="/mothers">
+  Nombre o Apellido: <input type="text" name="filter" />
+  <input type="submit" />
+</form>
 <table>
   <thead>
     <tr>
@@ -9,6 +12,7 @@
       <th>Last name</th>
       <th>Dni number</th>
       <th>Direction</th>
+      <th>Number</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +23,8 @@
         <td><%= mother.first_name %></td>
         <td><%= mother.last_name %></td>
         <td><%= mother.dni_number %></td>
-        <td><%= mother.direction.full_dir %></td>
+        <td><%= mother.direction.street %></td>
+        <td><%= mother.direction.number %></td>
         <td><%= link_to 'Show', mother %></td>
         <td><%= link_to 'Edit', edit_mother_path(mother) %></td>
         <td><%= link_to 'Destroy', mother, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,7 +32,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%= paginate @mothers %>
 <br>
 
 <%= link_to 'New Mother', new_mother_path %>

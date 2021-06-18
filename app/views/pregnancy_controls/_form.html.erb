@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :mother_id %>
-    <%= form.text_field :mother_id %>
+    <%= form.collection_select(:mother_id, Mother.all, :id, :full_name)%>
   </div>
 
   <div class="actions">
