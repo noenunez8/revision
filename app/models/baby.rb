@@ -1,5 +1,5 @@
 class Baby < ApplicationRecord
-  paginates_per 1
+  paginates_per 3
   has_many :center_attention_employees
   has_many :mother_sons
 

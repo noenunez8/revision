@@ -1,5 +1,5 @@
 class Mother < ApplicationRecord
-  paginates_per 1
+  paginates_per 3
   belongs_to :direction
   has_many :pregnancy_controls
   has_many :mother_sons
@@ -9,5 +9,5 @@ class Mother < ApplicationRecord
   def full_name
     first_name + " " + last_name
   end
-  
+
 end

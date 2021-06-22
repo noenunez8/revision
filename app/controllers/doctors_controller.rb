@@ -8,6 +8,7 @@ class DoctorsController < ApplicationController
 
     @doctors = @doctors.where(:speciality_id => params[:speciality_id]) if params[:speciality_id]
     @doctors = @doctors.where(["first_name LIKE :filter OR last_name LIKE :filter", :filter => "%" + params[:filter] + "%"]) unless params[:filter].blank?
+    
     @doctors = @doctors.page(params[:page] || 1)
   end
 

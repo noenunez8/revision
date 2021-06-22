@@ -5,6 +5,7 @@ class MothersController < ApplicationController
   # GET /mothers or /mothers.json
   def index
     @mothers = Mother.all
+    @mothers = @mothers.order((params[:by] || "first_name") + " " + (params[:order] || "asc"))
     @mothers = @mothers.page(params[:page] || 1)
     @mothers = @mothers.where(["first_name LIKE :filter OR last_name LIKE :filter", :filter => "%" + params[:filter] + "%"]) unless params[:filter].blank?
   end

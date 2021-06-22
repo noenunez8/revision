@@ -1,5 +1,5 @@
 class Tracing < ApplicationRecord
-  paginates_per 1
+  paginates_per 3
   belongs_to :mother
   belongs_to :baby
 

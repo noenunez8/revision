@@ -1,5 +1,5 @@
 class Direction < ApplicationRecord
-  paginates_per 1
+  paginates_per 3
   belongs_to :location
   has_many :center_attentions
   has_many :doctors

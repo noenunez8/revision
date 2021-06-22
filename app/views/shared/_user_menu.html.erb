@@ -2,17 +2,21 @@
   <nav class="navbar navbar-expand-xl navbar-light" style="background-color: #20CB87 ;">
 
     <ul class="navbar-nav">
-
+      <% if user_signed_in? %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" >
-          ToDo: User Menu
+          Usuario
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li>Mi Perfil</li>
-          <li>Cambiar Password</li>
-          <li>Cerrar Sesión</li>
+          <li><%= link_to "Editar Perfil", edit_user_registration_path, class: "btn" %></li>
+          <hr>
+          <li><%= link_to "Cerrar Sesión", destroy_user_session_path, class: "btn",  method: :delete  %></li>
         </ul>
       </li>
-    </ul>
+    <% else %>
+      <%= link_to "Iniciar Sesión", new_user_session_url, class: 'btn btn-success' %>
+    <% end %>
+  </ul>
+
   </nav>
 </div>

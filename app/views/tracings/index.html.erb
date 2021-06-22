@@ -1,23 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tracings</h1>
-
-<table>
+<h1 class="text-center">Historia Clínica</h1>
+<br>
+<table class="table table-primary" >
   <thead>
     <tr>
-      <th>Date of visit</th>
-      <th>Mother is health</th>
-      <th>Son is health</th>
-      <th>Description</th>
-      <th>Mother</th>
-      <th>Baby</th>
+      <th>Fecha de la visita</th>
+      <th>Salud de la madre</th>
+      <th>Salud del bebé</th>
+      <th>Descripción</th>
+      <th>Madre</th>
+      <th>Bebé</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @tracings.each do |tracing| %>
-      <tr>
+    <font size="2">
+      <tr class="table-primary" >
         <td><%= tracing.date_of_visit %></td>
         <td><%= tracing.mother_is_health %></td>
         <td><%= tracing.son_is_health %></td>

@@ -1,5 +1,5 @@
 class Doctor < ApplicationRecord
-  paginates_per 1
+  paginates_per 3
 
   belongs_to :speciality
   belongs_to :direction

@@ -1,5 +1,5 @@
 class CenterAttentionEmployee < ApplicationRecord
-  paginates_per 1
+  paginates_per 3
   belongs_to :center_attention
   belongs_to :doctor
   belongs_to :speciality

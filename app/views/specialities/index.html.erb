@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Specialities</h1>
-
-<table>
+<h1 class="text-center">Especialidades</h1>
+<br>
+<table class="table table-primary">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Number of doctors</th>
+      <th>Nombre</th>
+      <th>Cantidad de Médicos</th>
 
       <th colspan="3"></th>
     </tr>
@@ -14,7 +14,8 @@
 
   <tbody>
     <% @specialities.each do |speciality| %>
-      <tr>
+    <font size="2">
+      <tr class="table-primary" >
         <td><%= speciality.name %></td>
         <td><%= link_to speciality.doctors.count, doctors_path(:speciality_id => speciality.id) %></td>
         <td><%= link_to 'Show', speciality %></td>
